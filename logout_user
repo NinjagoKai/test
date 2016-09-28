@@ -1,0 +1,13 @@
+#!/bin/bash
+#set -x
+while true; do
+TIME1=$(date +%H)
+users | grep  zuzia
+A=$?
+if [ $A -eq 0 ]; then
+  if [ $TIME1 -le 8 ] || [ $TIME1 -ge 21 ]; then
+    killall -u zuzia
+  fi
+fi
+sleep 120
+done
